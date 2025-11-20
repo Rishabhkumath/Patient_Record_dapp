@@ -1,149 +1,69 @@
-# 🏥 Patient Record DApp
+# Patient Record DApp
 
-A decentralized application (DApp) for securely storing, managing, and accessing patient health records using blockchain technology.  
-This system ensures **data privacy**, **immutability**, and **secure access control** using Ethereum smart contracts.
+This project is a decentralized application for storing and managing patient health records using blockchain technology. The goal is to keep medical data secure, private, and accessible only through the smart contract. The system runs completely on the Hardhat local blockchain (no MetaMask used).
 
----
+## Features
 
-## 🚀 Features
-
-### 👨‍⚕️ Patient Features
-- Register as a patient on blockchain  
+### For Patients
+- Register as a patient  
 - Add or update medical records  
-- Grant access to doctors securely  
-- View entire medical history anytime  
+- Give access to doctors  
+- View complete medical history  
 
-### 🩺 Doctor Features
-- View patient records (only if access granted)  
-- Add diagnosis or prescriptions  
+### For Doctors
+- View patient records (only if access is granted)  
+- Add diagnosis or prescription details  
 
-### 🔐 Security
-- Ethereum blockchain-based  
-- Tamper-proof health records  
-- MetaMask wallet authentication  
-- Restricted access through smart contracts  
+### Security
+- Records stored securely on the local blockchain  
+- Data cannot be changed once stored (immutable)  
+- Access handled through smart contract functions  
 
----
-
-## 🔧 Tech Stack
+## Tech Stack
 
 ### Frontend
 - React + Vite  
-- Ethers.js  
-- MetaMask Integration  
+- Ethers.js (for connecting to Hardhat RPC)  
 
 ### Blockchain
 - Solidity  
 - Hardhat  
-- ABI-based contract calls  
 
 ### Tools
 - Node.js  
-- Local Hardhat Network  
+- Hardhat Local Network  
 
----
+## How to Run the Project
 
-## 📁 Folder Structure
-
-```
-project-root/
-│── contracts/
-│   └── PatientRecord.sol
-│
-│── scripts/
-│   └── deploy.js
-│
-│── src/
-│   ├── components/
-│   ├── pages/
-│   └── App.jsx
-│
-│── public/
-│── hospital-data/
-│── hardhat.config.js
-│── package.json
-│── README.md
-```
-
----
-
-## ⚙️ Running the Project
-
-### 1️⃣ Install Dependencies
-```bash
+### 1. Install dependencies
 npm install
-```
 
-### 2️⃣ Start Hardhat Local Blockchain
-```bash
+### 2. Start the Hardhat local blockchain
 npx hardhat node
-```
 
-### 3️⃣ Deploy the Contract
-```bash
+### 3. Deploy the smart contract
 npx hardhat run scripts/deploy.js --network localhost
-```
 
-### 4️⃣ Start the Frontend
-```bash
+### 4. Start the frontend
 npm run dev
-```
 
-### 5️⃣ Connect MetaMask  
-Add a custom network:
+The frontend will automatically connect to the Hardhat RPC (http://127.0.0.1:8545).
 
-```
-Network Name: Localhost
-RPC URL: http://127.0.0.1:8545
-Chain ID: 31337
-Currency: ETH
-```
+## Smart Contract Overview (PatientRecord.sol)
 
----
+This smart contract controls how patient data is stored and who can access it.
 
-## 📜 Smart Contract Overview
+### Main Functions
+- registerPatient() — register a new patient  
+- addRecord() — add or update a medical record  
+- grantAccess(address doctor) — allow a doctor to view records  
+- getRecord(address patient) — fetch record of a patient  
 
-### PatientRecord.sol
-Handles secure storage and access of patient data.
-
-#### Key Functionalities:
-- `registerPatient()` – Register a new patient  
-- `addRecord()` – Add/update health data  
-- `grantAccess(address doctor)` – Allow specific doctor to view data  
-- `getRecord(address patient)` – Fetch patient medical records  
-
----
-
-## 🧪 Testing (Optional)
-```bash
+## Testing (Optional)
 npx hardhat test
-```
 
----
-
-## 🛠 Future Enhancements
-- IPFS support for storing large files  
-- Multi-hospital role-based access  
-- UI improvements  
-- Notification system  
-
----
-
-## 🤝 Contribution
-- Keep React components modular  
-- Keep contract interaction logic separate  
-- Use environment variables for contract addresses  
-
----
-
-## 📘 Purpose of This README
-This file explains:
-- What your project does  
-- How to run it  
-- How the smart contract works  
-- Which technologies are used  
-
-It serves as **official project documentation** for faculty, GitHub, and team members.
-
----
-
+## Future Enhancements
+- Use IPFS for storing larger medical files  
+- Add multiple user roles (hospital admin, nurse, etc.)  
+- Improve the UI  
+- Add notifications for access requests  
