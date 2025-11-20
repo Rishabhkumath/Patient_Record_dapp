@@ -1,0 +1,23 @@
+{
+  "patients": [
+    {
+      "address": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "name": "John Smith",
+      "registered": true
+    },
+    {
+      "address": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+      "name": "Emma Johnson",
+      "registered": true
+    }
+  ],
+  "doctors": [
+    {
+      "address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "name": "Dr. Sarah Wilson",
+      "registered": true
+    }
+  ],
+  "records": 2,
+  "timestamp": "2025-11-06T16:55:25.049Z"
+}

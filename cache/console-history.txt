@@ -1,0 +1,3 @@
+await c.getPatient("<the-account-you-registered-with>");
+const c = await ethers.getContractAt("MedicalRecords","<YOUR_CONTRACT_ADDRESS>");
+.help
